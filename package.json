@@ -9,7 +9,13 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "app:add:android": "ionic capacitor add android",
+    "app:sync": "ionic capacitor sync",
+    "generate:android": "npm run app:sync && cd android && ./gradlew assembleDebug",
+    "app:run:android": "npx cap run android",
+    "generate-ios": "npm run app:sync --ios && npm run app:run:ios",
+    "app:run:ios": "npx cap run ios"
   },
   "private": true,
   "dependencies": {
@@ -27,7 +33,10 @@
     "@capacitor/keyboard": "5.0.6",
     "@capacitor/status-bar": "5.0.6",
     "@ionic/angular": "^7.0.0",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
     "ionicons": "^7.0.0",
+    "prettier": "^2.8.8",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
